@@ -9,6 +9,11 @@ import java.net.URL;
 
 public class Util {
 
+    /**
+     * Download the contents of given URL as a string.
+     * @param url URL to HTML page or other string-based file
+     * @return Contents of the page
+     */
     public static String downloadURL(URL url) {
         InputStream in = null;
 
