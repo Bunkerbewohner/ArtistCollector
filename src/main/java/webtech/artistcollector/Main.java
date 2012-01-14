@@ -3,6 +3,9 @@ package webtech.artistcollector;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Main Window
+ */
 public class Main extends JFrame {
 
     ArtistCollector collector;
