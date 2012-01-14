@@ -2,8 +2,6 @@ package webtech.artistcollector;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class Main extends JFrame {
 
