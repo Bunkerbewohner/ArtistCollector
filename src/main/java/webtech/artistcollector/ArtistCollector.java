@@ -22,12 +22,7 @@ public class ArtistCollector implements RunnableFuture<List<CollectionAndArtist>
     List<CollectionAndArtist> results = new ArrayList<CollectionAndArtist>();
 
     public ArtistCollector() {
-        try {
-            startURL = new URL("http://de.wikipedia.org/wiki/Liste_der_Sammlungen_moderner_oder_zeitgen%C3%B6ssischer_Kunst");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            System.exit(-1);
-        }
+        startURL = Main.getInstance().getPageModel().getRootPage().url;
     }
 
     public void run() {
@@ -57,6 +52,8 @@ public class ArtistCollector implements RunnableFuture<List<CollectionAndArtist>
             System.out.println(title + " @ " + url);
             try {
                 pages.add(new URL(url));
+                PageModel pageModel = Main.getInstance().getPageModel();
+                pageModel.createPage(new URL(url), pageModel.getRootPage());
             } catch (MalformedURLException e) {
                 System.out.println("Invalid URL '" + url + "'");
             }
