@@ -73,4 +73,8 @@ public class Main extends JFrame {
     public PageModel getPageModel() {
         return pageModel;
     }
+
+    public void reportStatus(float progressPercent, String statusMessage) {
+        mainForm.reportStatus(progressPercent, statusMessage);
+    }
 }

@@ -20,6 +20,14 @@ public class MainWindow {
     private JButton startPageCollectorButton;
     private JTextPane logPane;
 
+    public void reportStatus(float progressPercent, String statusMessage) {
+        progressBar1.setMinimum(0);
+        progressBar1.setMaximum(100);
+        progressBar1.setValue((int)Math.floor(progressPercent));
+        progressBar1.setStringPainted(true);
+        progressBar1.setString(statusMessage);
+    }
+
     public JPanel getRootPanel() {
         return rootPanel;
     }
