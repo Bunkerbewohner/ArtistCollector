@@ -44,6 +44,11 @@ public class PageModel implements TreeModel {
             Collections.reverse(path);
             return path.toArray();
         }
+
+        @Override
+        public String toString() {
+            return name;
+        }
     }
 
     public class Page {
@@ -88,7 +93,7 @@ public class PageModel implements TreeModel {
             } catch (UnsupportedEncodingException e) {
                 str = url.toString();
             }
-            return str + " (" + children.size() + ")";
+            return str + " (" + (children.size() + names.size()) + ")";
         }
     }
 
@@ -123,6 +128,7 @@ public class PageModel implements TreeModel {
                 }
 
                 l.treeNodesInserted(e);
+                //l.treeStructureChanged(new TreeModelEvent(this, new TreePath(root)));
             }
         }
     }
@@ -145,7 +151,7 @@ public class PageModel implements TreeModel {
         if (parent instanceof Page) {
             Page p = (Page)parent;
             if (index >= p.children.size()) {
-                int j = p.children.size() - index;
+                int j = index - p.children.size();
                 return p.names.get(j);
             } else {
                 return p.children.get(index);
@@ -156,7 +162,9 @@ public class PageModel implements TreeModel {
     }
 
     public int getChildCount(Object parent) {
-        if (parent instanceof Name) return 0;
+        if (parent instanceof Name) {
+            return 0;
+        }
         Page p = (Page)parent;
         return p.children.size() + p.names.size();
     }
@@ -164,7 +172,7 @@ public class PageModel implements TreeModel {
     public boolean isLeaf(Object node) {
         if (node instanceof Page) {
             Page p = (Page)node;
-            return p.children.size() == 0;
+            return (p.children.size() + p.names.size()) == 0;
         } else if (node instanceof Name) {
             return true;
         } else {

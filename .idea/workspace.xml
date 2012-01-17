@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="39bf81e9-95df-4373-b481-1fe623b91ea2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/ArtistCollector.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/ArtistCollector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/Main.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/PageModel.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/PageModel.java" />
     </list>
     <ignored path="ArtistCollector.iws" />
@@ -86,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageModel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PageModel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/PageModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="22" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.59183675">
+            <state line="49" column="24" selection-start="1303" selection-end="1303" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -102,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArtistCollector.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ArtistCollector.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/ArtistCollector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="24" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.0">
+            <state line="57" column="29" selection-start="1835" selection-end="1835" vertical-scroll-proportion="0.7176781">
               <folding />
             </state>
           </provider>
@@ -150,8 +147,8 @@
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/MainWindow.form" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/ArtistCollector.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/PageModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/ArtistCollector.java" />
       </list>
     </option>
   </component>
@@ -193,6 +190,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -273,9 +273,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,25 +290,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Unnamed">
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="PhingTarget" enabled="false" />
-        <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <module name="" />
       <setting name="path" value="" />
@@ -324,6 +307,20 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
         <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
       </method>
     </configuration>
@@ -414,6 +411,21 @@
         <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
       </method>
     </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -433,21 +445,6 @@
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
         <option name="PhingTarget" enabled="false" />
-        <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
         <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
       </method>
     </configuration>
@@ -495,6 +492,7 @@
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21278317" sideWeight="0.67255217" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24595469" sideWeight="0.67255217" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -512,7 +510,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24898621" sideWeight="0.67255217" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32744783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21278317" sideWeight="0.67255217" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -545,7 +542,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rudimentäre GUI hinzugefügt" />
+    <option name="LAST_COMMIT_MESSAGE" value="SEHR naive Namensextraktion, Anzeige noch nicht optimale" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -561,6 +558,7 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Kommentar hinzugefügt" />
     <MESSAGE value="Rudimentäre GUI hinzugefügt" />
+    <MESSAGE value="SEHR naive Namensextraktion, Anzeige noch nicht optimale" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -573,6 +571,16 @@
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="45" selection-start="596" selection-end="596" vertical-scroll-proportion="0.4117647" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="60" selection-start="2089" selection-end="2089" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/MainWindow.form">
@@ -590,37 +598,21 @@
         <state line="2" column="13" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/PageModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="45" selection-start="596" selection-end="596" vertical-scroll-proportion="0.4117647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="60" selection-start="2089" selection-end="2089" vertical-scroll-proportion="0.0">
+        <state line="49" column="24" selection-start="1303" selection-end="1303" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="46" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="27" column="46" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/ArtistCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="24" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/PageModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="22" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.59183675">
+        <state line="57" column="29" selection-start="1835" selection-end="1835" vertical-scroll-proportion="0.7176781">
           <folding />
         </state>
       </provider>
