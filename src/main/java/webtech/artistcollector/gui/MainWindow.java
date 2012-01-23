@@ -1,11 +1,12 @@
-package webtech.artistcollector;
+package webtech.artistcollector.gui;
+
+import webtech.artistcollector.data.PageModel;
 
 import javax.swing.*;
 import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
-import javax.swing.tree.TreePath;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -19,6 +20,8 @@ public class MainWindow {
     private JProgressBar progressBar1;
     private JButton startPageCollectorButton;
     private JTextPane logPane;
+    private JButton cancelButton;
+    private JButton saveToDBButton;
 
     public void reportStatus(float progressPercent, String statusMessage) {
         progressBar1.setMinimum(0);
@@ -36,11 +39,30 @@ public class MainWindow {
         return logPane;
     }
 
+    final void eventCollectorStarted() {
+        Main.getInstance().startPageCollector();
+        startPageCollectorButton.setEnabled(false);
+        cancelButton.setEnabled(true);
+        saveToDBButton.setEnabled(false);
+    }
+
+    final void eventCollectorCancelled() {
+        Main.getInstance().crawler.cancel(true);
+        cancelButton.setEnabled(false);
+        startPageCollectorButton.setEnabled(true);
+        saveToDBButton.setEnabled(true);
+    }
+
     public MainWindow() {
 
         startPageCollectorButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Main.getInstance().startPageCollector();
+                eventCollectorStarted();
+            }
+        });
+        cancelButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                eventCollectorCancelled();
             }
         });
     }

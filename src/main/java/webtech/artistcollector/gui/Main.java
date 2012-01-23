@@ -1,6 +1,12 @@
-package webtech.artistcollector;
+package webtech.artistcollector.gui;
 
-import sun.security.jca.GetInstance;
+import webtech.artistcollector.crawler.Crawler;
+import webtech.artistcollector.crawler.Extractors;
+import webtech.artistcollector.crawler.extractors.BasePageExtractor;
+import webtech.artistcollector.crawler.extractors.RegexNameExtractor;
+import webtech.artistcollector.data.Database;
+import webtech.artistcollector.data.PageModel;
+import webtech.artistcollector.misc.Util;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,8 +19,9 @@ import java.net.URL;
 public class Main extends JFrame {
 
     MainWindow mainForm;
-    ArtistCollector collector;
+    Crawler crawler;
     PageModel pageModel;
+    Database db;
 
     public static void main(String[] args) {
         new Main().setVisible(true);
@@ -50,31 +57,50 @@ public class Main extends JFrame {
         try {
             startURL = new URL("http://de.wikipedia.org/wiki/Liste_der_Sammlungen_moderner_oder_zeitgen%C3%B6ssischer_Kunst");
         } catch (MalformedURLException e) {
-            // Should not happen
-            e.printStackTrace();
-            System.exit(-1);
+            assert false : "Ungültiger Start-URL";
         }
         pageModel = new PageModel(startURL);
         instance = this;
 
-        collector = new ArtistCollector();
+        initExtractors();
+
+        crawler = new Crawler();
 
         // Create Form
         mainForm = new MainWindow();
         this.setContentPane(mainForm.getRootPanel());
         mainForm.redirectSystemStreams();
         mainForm.setTreeModel(pageModel);
+
+        db = new Database();
+        if (!db.isReady()) {
+            System.out.println("Datenbankzugriff nicht möglich");
+        }
+    }
+
+    void saveToDB() {
+        Main.getInstance().reportStatus(0, "Saving to Database...");
+        db.InsertNames(Util.listNames(crawler.getRootPage()));
+    }
+
+    void initExtractors() {
+        Extractors.getInstance().registerExtractor(new BasePageExtractor());
+        Extractors.getInstance().registerExtractor(new RegexNameExtractor());
     }
 
     public void startPageCollector() {
-        new Thread(collector).start();
+        new Thread(crawler).start();
     }
 
     public PageModel getPageModel() {
         return pageModel;
     }
 
-    public void reportStatus(float progressPercent, String statusMessage) {
-        mainForm.reportStatus(progressPercent, statusMessage);
+    public void reportStatus(final float progressPercent, final String statusMessage) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                mainForm.reportStatus(progressPercent, statusMessage);
+            }
+        });
     }
 }

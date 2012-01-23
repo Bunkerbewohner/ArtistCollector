@@ -1,6 +1,5 @@
-package webtech.artistcollector;
+package webtech.artistcollector.data;
 
-import sun.org.mozilla.javascript.internal.ast.ParenthesizedExpression;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.swing.event.TreeModelEvent;
@@ -8,7 +7,6 @@ import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.ArrayList;
@@ -57,6 +55,7 @@ public class PageModel implements TreeModel {
         public URL url;
         public List<Page> children;
         public List<Name> names;
+        public String collection;
 
         protected Page(URL url) {
             this.url = url;
