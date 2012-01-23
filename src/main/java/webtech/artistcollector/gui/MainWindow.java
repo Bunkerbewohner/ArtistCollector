@@ -1,11 +1,12 @@
-package webtech.artistcollector;
+package webtech.artistcollector.gui;
+
+import webtech.artistcollector.data.PageModel;
 
 import javax.swing.*;
 import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
-import javax.swing.tree.TreePath;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;

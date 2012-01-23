@@ -1,6 +1,10 @@
-package webtech.artistcollector;
+package webtech.artistcollector.gui;
 
-import sun.security.jca.GetInstance;
+import webtech.artistcollector.crawler.Crawler;
+import webtech.artistcollector.crawler.Extractors;
+import webtech.artistcollector.crawler.extractors.BasePageExtractor;
+import webtech.artistcollector.crawler.extractors.RegexNameExtractor;
+import webtech.artistcollector.data.PageModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +17,7 @@ import java.net.URL;
 public class Main extends JFrame {
 
     MainWindow mainForm;
-    ArtistCollector collector;
+    Crawler crawler;
     PageModel pageModel;
 
     public static void main(String[] args) {
@@ -50,14 +54,14 @@ public class Main extends JFrame {
         try {
             startURL = new URL("http://de.wikipedia.org/wiki/Liste_der_Sammlungen_moderner_oder_zeitgen%C3%B6ssischer_Kunst");
         } catch (MalformedURLException e) {
-            // Should not happen
-            e.printStackTrace();
-            System.exit(-1);
+            assert false : "Ungültiger Start-URL";
         }
         pageModel = new PageModel(startURL);
         instance = this;
 
-        collector = new ArtistCollector();
+        initExtractors();
+
+        crawler = new Crawler();
 
         // Create Form
         mainForm = new MainWindow();
@@ -66,8 +70,13 @@ public class Main extends JFrame {
         mainForm.setTreeModel(pageModel);
     }
 
+    void initExtractors() {
+        Extractors.getInstance().registerExtractor(new BasePageExtractor());
+        Extractors.getInstance().registerExtractor(new RegexNameExtractor());
+    }
+
     public void startPageCollector() {
-        new Thread(collector).start();
+        new Thread(crawler).start();
     }
 
     public PageModel getPageModel() {
