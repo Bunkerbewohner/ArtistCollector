@@ -5,6 +5,7 @@ public class CollectionAndArtist implements Comparable {
     public String artist;
     public String crawler;
     public String url;
+    public Page page;
 
     public CollectionAndArtist(String collection, String artist) {
         this.collection = collection;
@@ -37,6 +38,11 @@ public class CollectionAndArtist implements Comparable {
 
     public String getCrawler() {
         return crawler;
+    }
+
+    @Override
+    public String toString() {
+        return collection + " -> " + artist;
     }
 
     /**

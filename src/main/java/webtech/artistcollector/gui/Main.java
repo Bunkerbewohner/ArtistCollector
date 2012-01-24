@@ -12,6 +12,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.EventListener;
+import java.util.LinkedList;
 
 /**
  * Main Window
@@ -70,7 +73,7 @@ public class Main extends JFrame {
         mainForm = new MainWindow();
         this.setContentPane(mainForm.getRootPanel());
         mainForm.redirectSystemStreams();
-        mainForm.setTreeModel(pageModel);
+        mainForm.setTreeModel(crawler.getRootPage());
 
         db = new Database();
         if (!db.isReady()) {
@@ -78,7 +81,7 @@ public class Main extends JFrame {
         }
     }
 
-    void saveToDB() {
+    public void saveToDB() {
         Main.getInstance().reportStatus(0, "Saving to Database...");
         db.InsertNames(Util.listNames(crawler.getRootPage()));
     }

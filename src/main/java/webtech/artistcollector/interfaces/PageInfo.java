@@ -64,4 +64,10 @@ public interface PageInfo {
      * @param name Name und Sammlung
      */
     void addName(CollectionAndArtist name);
+
+    /**
+     * Zählt die Anzahl der Namen, die auf dieser Seite und ihren Unterseiten gefunden wurden.
+     * @return Anzahl Namen
+     */
+    int countNames();
 }

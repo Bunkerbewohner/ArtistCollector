@@ -70,35 +70,28 @@
                   </scrollpane>
                 </children>
               </splitpane>
-              <grid id="1890f" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
+              <grid id="1890f" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                 <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
                 <border type="none"/>
                 <children>
                   <component id="75d70" class="javax.swing.JButton" binding="startPageCollectorButton" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
+                    <constraints/>
                     <properties>
                       <text value="Start Page Collector"/>
                     </properties>
                   </component>
                   <component id="9f197" class="javax.swing.JButton" binding="cancelButton" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
+                    <constraints/>
                     <properties>
                       <enabled value="false"/>
                       <text value="Cancel"/>
                     </properties>
                   </component>
                   <component id="cd7e0" class="javax.swing.JButton" binding="saveToDBButton" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
+                    <constraints/>
                     <properties>
                       <enabled value="false"/>
                       <text value="Save to DB"/>

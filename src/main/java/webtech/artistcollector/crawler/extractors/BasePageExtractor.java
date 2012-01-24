@@ -78,16 +78,18 @@ public class BasePageExtractor implements PageExtractor {
 
                 if (url.startsWith("/")) url = "http://de.wikipedia.org" + url;
                 if (url.startsWith("#") || url.contains("=") || url.matches(".*:[^/]+.*")) {
-                    System.out.println("## DISCARDED '" + url + "'");
+                    //System.out.println("## DISCARDED '" + url + "'");
                     continue;
                 }
 
-                System.out.println(title + " @ " + url);
-                try {
-                    Page page = new Page(new URL(url), title, true, true);
-                    pages.add(page);
-                } catch (MalformedURLException e) {
-                    System.out.println("Invalid URL '" + url + "'");
+                if (!info.getURL().toString().equals(url)) {
+                    try {
+                        Page page = new Page(new URL(url), title, true, true);
+                        page.setParent((Page)info);
+                        pages.add(page);
+                    } catch (MalformedURLException e) {
+                        //System.out.println("Invalid URL '" + url + "'");
+                    }
                 }
             }
         }

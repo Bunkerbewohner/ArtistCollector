@@ -2,28 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39bf81e9-95df-4373-b481-1fe623b91ea2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Mathias.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Extractors.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CollectionAndArtist.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Database.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/Extractor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/NameExtractor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageExtractor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java" />
-      <change type="DELETED" beforePath="C:\Users\Mathias\IdeaProjects\ArtistCollector\src\main\java\webtech\artistcollector\ArtistCollector.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Mathias\IdeaProjects\ArtistCollector\src\main\java\webtech\artistcollector\CollectionAndArtist.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Mathias\IdeaProjects\ArtistCollector\src\main\java\webtech\artistcollector\Main.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java" />
-      <change type="MOVED" beforePath="C:\Users\Mathias\IdeaProjects\ArtistCollector\src\main\java\webtech\artistcollector\MainWindow.form" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form" />
-      <change type="MOVED" beforePath="C:\Users\Mathias\IdeaProjects\ArtistCollector\src\main\java\webtech\artistcollector\MainWindow.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" />
-      <change type="MOVED" beforePath="C:\Users\Mathias\IdeaProjects\ArtistCollector\src\main\java\webtech\artistcollector\PageModel.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/PageModel.java" />
-      <change type="MOVED" beforePath="C:\Users\Mathias\IdeaProjects\ArtistCollector\src\main\java\webtech\artistcollector\Util.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/misc/Util.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/CrawlerEventListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CollectionAndArtist.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CollectionAndArtist.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java" />
     </list>
     <ignored path="ArtistCollector.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,6 +34,21 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" line="148" class="webtech.artistcollector.crawler.Crawler" package="webtech.artistcollector.crawler">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -85,10 +89,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Database.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Database.java">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="34" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0">
+            <state line="83" column="11" selection-start="2364" selection-end="2364" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,36 +100,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Crawler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java">
+      <file leaf-file-name="Page.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="24" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="72" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.5958763">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainWindow.form" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainWindow.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="62" selection-start="1466" selection-end="1466" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="220" column="47" selection-start="6428" selection-end="6428" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,8 +114,39 @@
       <file leaf-file-name="BasePageExtractor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="70" selection-start="2473" selection-end="2473" vertical-scroll-proportion="0.0">
+            <state line="87" column="51" selection-start="3278" selection-end="3278" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Crawler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="152" column="94" selection-start="4835" selection-end="4835" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrawlerEventListener.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/CrawlerEventListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="27" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainWindow.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="50" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.34136546">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,22 +166,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/Extractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageExtractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/NameExtractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Extractors.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CommonPageInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/misc/Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Database.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CollectionAndArtist.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/misc/Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/CrawlerEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Database.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form" />
-        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" />
       </list>
     </option>
   </component>
@@ -227,9 +239,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Favorites" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -503,9 +515,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.Artist Collector">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -670,19 +682,19 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21212122" sideWeight="0.67741936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24579124" sideWeight="0.67741936" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24556962" sideWeight="0.67741936" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5216693" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32516128" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24894515" sideWeight="0.67741936" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29535866" sideWeight="0.67741936" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32258064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -717,7 +729,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auflistung der Namen in Baumansicht. Trefferquote schlecht" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crawling kann abgebrochen werden und Ergebnisse werden in Datenbank geschrieben. Ist noch SEHR viel Müll dabei. AUßerdem ist die Baumansicht gerade noch futsch. Wird bald behoben." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -735,6 +747,7 @@
     <MESSAGE value="Rudimentäre GUI hinzugefügt" />
     <MESSAGE value="SEHR naive Namensextraktion, Anzeige noch nicht optimale" />
     <MESSAGE value="Auflistung der Namen in Baumansicht. Trefferquote schlecht" />
+    <MESSAGE value="Crawling kann abgebrochen werden und Ergebnisse werden in Datenbank geschrieben. Ist noch SEHR viel Müll dabei. AUßerdem ist die Baumansicht gerade noch futsch. Wird bald behoben." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -744,9 +757,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/Extractor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/misc/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="60" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0" />
+        <state line="33" column="48" selection-start="936" selection-end="936" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Extractors.java">
@@ -754,97 +767,107 @@
         <state line="10" column="41" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/NameExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="36" selection-start="784" selection-end="784" vertical-scroll-proportion="0.0" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageExtractor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="25" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="36" selection-start="2093" selection-end="2093" vertical-scroll-proportion="0.77272725">
+        <state line="62" column="51" selection-start="1906" selection-end="1906" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/PageModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="58" selection-start="2276" selection-end="2276" vertical-scroll-proportion="0.022727273">
+        <state line="29" column="41" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="19" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.022727273">
+        <state line="69" column="27" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CollectionAndArtist.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="23" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/misc/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="48" selection-start="936" selection-end="936" vertical-scroll-proportion="0.0">
+        <state line="27" column="41" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="45" selection-start="2466" selection-end="2466" vertical-scroll-proportion="0.0">
+        <state line="68" column="17" selection-start="2425" selection-end="2425" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java">
+    <entry file="jar://C:/dev/java/src.zip!/java/util/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="70" selection-start="2473" selection-end="2473" vertical-scroll-proportion="0.0">
+        <state line="31" column="17" selection-start="350" selection-end="350" vertical-scroll-proportion="0.18181819">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Database.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/CrawlerEventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="34" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0">
+        <state line="7" column="27" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="51" selection-start="3278" selection-end="3278" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java">
+    <entry file="jar://C:/dev/java/src.zip!/javax/swing/tree/TreeModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="62" selection-start="1466" selection-end="1466" vertical-scroll-proportion="0.0">
+        <state line="148" column="9" selection-start="4871" selection-end="4871" vertical-scroll-proportion="0.58082193">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="24" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.0">
+        <state line="152" column="94" selection-start="4835" selection-end="4835" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="220" column="47" selection-start="6428" selection-end="6428" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="72" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.5958763">
-          <folding />
+        <state line="83" column="11" selection-start="2364" selection-end="2364" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="50" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.34136546">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

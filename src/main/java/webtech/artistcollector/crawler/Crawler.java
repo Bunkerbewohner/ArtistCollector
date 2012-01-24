@@ -3,6 +3,7 @@ package webtech.artistcollector.crawler;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import webtech.artistcollector.data.Database;
 import webtech.artistcollector.data.Page;
+import webtech.artistcollector.gui.CrawlerEventListener;
 import webtech.artistcollector.interfaces.NameExtractor;
 import webtech.artistcollector.interfaces.PageExtractor;
 import webtech.artistcollector.interfaces.PageInfo;
@@ -11,6 +12,8 @@ import webtech.artistcollector.data.CollectionAndArtist;
 import webtech.artistcollector.data.PageModel;
 import webtech.artistcollector.gui.Main;
 
+import javax.swing.*;
+import javax.swing.tree.TreePath;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -31,6 +34,7 @@ public class Crawler implements RunnableFuture<List<CollectionAndArtist>>{
     boolean done = false;
     boolean cancelled = false;
     List<CollectionAndArtist> results = new ArrayList<CollectionAndArtist>();
+    ArrayList<CrawlerEventListener> listeners = new ArrayList<CrawlerEventListener>();
 
     Page rootPage;
 
@@ -40,6 +44,7 @@ public class Crawler implements RunnableFuture<List<CollectionAndArtist>>{
 
     public Crawler() {
         startURL = Main.getInstance().getPageModel().getRootPage().url;
+        rootPage = new Page(startURL, null, false, true);
     }
 
     public void run() {
@@ -47,10 +52,13 @@ public class Crawler implements RunnableFuture<List<CollectionAndArtist>>{
 
         Main.getInstance().reportStatus(0, "Collecting Pages...");
 
-        rootPage = new Page(startURL, null, false, true);
         extractPages(rootPage);
 
         Main.getInstance().reportStatus(100, "Done.");
+
+        for (CrawlerEventListener l : listeners) {
+            l.crawlerFinished(rootPage);
+        }
     }
 
     /**
@@ -129,5 +137,16 @@ public class Crawler implements RunnableFuture<List<CollectionAndArtist>>{
 
     public List<CollectionAndArtist> get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
         throw new NotImplementedException();
+    }
+
+    public void addEventListener(CrawlerEventListener l) {
+        listeners.add(l);
+    }
+
+    public void remove(TreePath selectionPath) {
+        Page page = rootPage.getPage(selectionPath);
+        if (page != null) {
+            rootPage.removePage(selectionPath);
+        }
     }
 }

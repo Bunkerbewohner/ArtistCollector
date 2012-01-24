@@ -64,11 +64,9 @@ public class RegexNameExtractor implements NameExtractor {
 
                 if (url.startsWith("/")) url = "http://de.wikipedia.org" + url;
                 if (url.startsWith("#") || url.contains("=") || url.matches(".*:[^/]+.*")) {
-                    System.out.println("## DISCARDED NAME '" + url + "'");
+                    //System.out.println("## DISCARDED NAME '" + url + "'");
                     continue;
                 }
-
-                System.out.println(name);
 
                 CollectionAndArtist item = new CollectionAndArtist(info.getCollection(), name);
                 item.crawler = CRAWLER_TAG;

@@ -1,17 +1,27 @@
 package webtech.artistcollector.gui;
 
 import webtech.artistcollector.data.PageModel;
+import webtech.artistcollector.interfaces.PageInfo;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
+import javax.swing.tree.TreeModel;
+import javax.swing.tree.TreePath;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.security.Key;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class MainWindow {
     private JTabbedPane tabbedPane1;
@@ -53,6 +63,18 @@ public class MainWindow {
         saveToDBButton.setEnabled(true);
     }
 
+    final void eventCollectorFinished() {
+        cancelButton.setEnabled(false);
+        startPageCollectorButton.setEnabled(true);
+        saveToDBButton.setEnabled(true);
+    }
+
+    final void eventSavingStarted() {
+        saveToDBButton.setEnabled(false);
+        startPageCollectorButton.setEnabled(false);
+        cancelButton.setEnabled(false);
+    }
+
     public MainWindow() {
 
         startPageCollectorButton.addActionListener(new ActionListener() {
@@ -63,6 +85,24 @@ public class MainWindow {
         cancelButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 eventCollectorCancelled();
+            }
+        });
+
+        saveToDBButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new Thread(new Runnable() {
+
+                    public void run() {
+                        Main.getInstance().saveToDB();
+                    }
+                }).start();
+                eventSavingStarted();
+            }
+        });
+
+        Main.getInstance().crawler.addEventListener(new CrawlerEventListener() {
+            public void crawlerFinished(PageInfo results) {
+                eventCollectorFinished();
             }
         });
     }
@@ -103,23 +143,52 @@ public class MainWindow {
         System.setErr(new PrintStream(out, true));
     }
 
-    public void setTreeModel(PageModel pageModel) {
+    public void setTreeModel(TreeModel pageModel) {
         pageHierarchy.setModel(pageModel);
         pageModel.addTreeModelListener(new TreeModelListener() {
             public void treeNodesChanged(TreeModelEvent e) {
-
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        pageHierarchy.invalidate();
+                    }
+                });
             }
 
-            public void treeNodesInserted(TreeModelEvent e) {
+            public void treeNodesInserted(final TreeModelEvent e) {
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        pageHierarchy.invalidate();
 
+                        TreePath firstChild = new TreePath(e.getPath()[0]);
+                        if (!pageHierarchy.isExpanded(firstChild)) {
+                            pageHierarchy.scrollPathToVisible(e.getTreePath().getParentPath());
+                        }
+                    }
+                });
             }
 
             public void treeNodesRemoved(TreeModelEvent e) {
-                //To change body of implemented methods use File | Settings | File Templates.
+
             }
 
             public void treeStructureChanged(TreeModelEvent e) {
-                //To change body of implemented methods use File | Settings | File Templates.
+
+            }
+        });
+
+        pageHierarchy.addKeyListener(new KeyListener() {
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            public void keyReleased(KeyEvent e) {
+                if (pageHierarchy.getSelectionPath() != null && e.getKeyCode() == KeyEvent.VK_DELETE) {
+                    Main.getInstance().crawler.remove(pageHierarchy.getSelectionPath());
+                }
             }
         });
     }
