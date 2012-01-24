@@ -1,7 +1,6 @@
 package webtech.artistcollector.crawler.extractors;
 
 import webtech.artistcollector.data.CollectionAndArtist;
-import webtech.artistcollector.data.PageModel;
 import webtech.artistcollector.interfaces.NameExtractor;
 import webtech.artistcollector.interfaces.PageInfo;
 import webtech.artistcollector.misc.Util;
@@ -14,10 +13,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Extraktor, der versucht durch einfache Anwendung von regulären Ausdrücken alle (relevanten)
- * Namen auf einer Seite zu extrahieren.
+ * Ein Extraktor extra für die graphische Sammlung München
  */
-public class RegexNameExtractor implements NameExtractor {
+public class MunichNameExtractor implements NameExtractor {
 
     private boolean selected = true;
 
@@ -47,11 +45,27 @@ public class RegexNameExtractor implements NameExtractor {
             return new LinkedList<CollectionAndArtist>();
         }
 
+        // Nur bei Zieldokument anwenden, ansonsten hier aussteigen
+        if (!pageHTML.contains("STAATLICHE GRAPHISCHE SAMMLUNG")) {
+            return new LinkedList<CollectionAndArtist>();
+        }
+
         // Reguläre Ausdrücke zum Finden der Namen
         Pattern[] patterns = new Pattern[]{
 
-                // Wikipedia naiv
-                Pattern.compile("<a href=\"([^\"]+)\"[^>]+>([^< ]+ [^< ]+)</a>"),
+                /*
+                // Monogramm A
+                Pattern.compile("<SPAN[^>]+?>([^,]+?)-[^<>]*?</SPAN",
+                        Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL),
+
+                // Monogramm B
+                Pattern.compile("<SPAN[^>]+?>([^,]+?)siehe[^<>]*?</SPAN",
+                        Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL),
+                */
+
+                // Normaler Name
+                Pattern.compile("<SPAN[^>]+?>([^,<>]+),([^<>,]+?)-[^<>]*?</SPAN",
+                        Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL)
         };
 
         List<CollectionAndArtist> names = new ArrayList<CollectionAndArtist>();
@@ -61,18 +75,24 @@ public class RegexNameExtractor implements NameExtractor {
             Matcher m = p.matcher(pageHTML);
 
             while (m.find()) {
-                String url = m.group(1);
-                String name = m.group(2);
 
-                if (url.startsWith("/")) url = "http://de.wikipedia.org" + url;
-                if (url.startsWith("#") || url.contains("=") || url.matches(".*:[^/]+.*")) {
-                    //System.out.println("## DISCARDED NAME '" + url + "'");
-                    continue;
+                String name = null;
+
+                if (m.groupCount() == 1) {
+                    name = m.group(1).trim();
+                } else if (m.groupCount() == 2) {
+                    name = m.group(2).trim() + " " + m.group(1).trim();
                 }
 
                 CollectionAndArtist item = new CollectionAndArtist(info.getCollection(), name);
                 item.crawler = CRAWLER_TAG;
                 item.url = info.getURL().toString();
+                item.collection = "STAATLICHE GRAPHISCHE SAMMLUNG";
+
+                if (m.groupCount() == 2) {
+                    item.fname = m.group(2);
+                    item.lname = m.group(1);
+                }
 
                 names.add(item);
             }

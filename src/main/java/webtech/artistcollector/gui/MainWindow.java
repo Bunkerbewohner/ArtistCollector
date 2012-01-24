@@ -188,6 +188,9 @@ public class MainWindow {
             public void keyReleased(KeyEvent e) {
                 if (pageHierarchy.getSelectionPath() != null && e.getKeyCode() == KeyEvent.VK_DELETE) {
                     Main.getInstance().crawler.remove(pageHierarchy.getSelectionPath());
+                    e.consume();
+                } else if (e.getKeyCode() == KeyEvent.VK_F2) {
+                    Main.getInstance().crawler.editStartURL();
                 }
             }
         });

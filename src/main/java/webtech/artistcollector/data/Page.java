@@ -1,5 +1,6 @@
 package webtech.artistcollector.data;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import webtech.artistcollector.interfaces.PageInfo;
 
@@ -28,6 +29,7 @@ public class Page implements PageInfo, TreeModel {
     protected List<CollectionAndArtist> names;
     protected List<PageInfo> subPages;
     protected List<TreeModelListener> modelListeners;
+    protected int verified = -1;
 
     public Page(URL url, String collection, boolean gotNames, boolean gotPages) {
         modelListeners = new ArrayList<TreeModelListener>();
@@ -50,6 +52,19 @@ public class Page implements PageInfo, TreeModel {
      */
     public URL getURL() {
         return url;
+    }
+
+    public void setURL(URL url) {
+        this.url = url;
+        notifyListeners(null, this, null);
+    }
+
+    public void setContainsPages(boolean value) {
+        this.gotPages = value;
+    }
+
+    public void setContainsNames(boolean value) {
+        this.gotNames = value;
     }
 
     /**

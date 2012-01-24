@@ -3,6 +3,7 @@ package webtech.artistcollector.gui;
 import webtech.artistcollector.crawler.Crawler;
 import webtech.artistcollector.crawler.Extractors;
 import webtech.artistcollector.crawler.extractors.BasePageExtractor;
+import webtech.artistcollector.crawler.extractors.MunichNameExtractor;
 import webtech.artistcollector.crawler.extractors.RegexNameExtractor;
 import webtech.artistcollector.data.Database;
 import webtech.artistcollector.data.PageModel;
@@ -10,6 +11,8 @@ import webtech.artistcollector.misc.Util;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -75,6 +78,23 @@ public class Main extends JFrame {
         mainForm.redirectSystemStreams();
         mainForm.setTreeModel(crawler.getRootPage());
 
+        this.addKeyListener(new KeyListener() {
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_F2) {
+                    crawler.editStartURL();
+                    System.out.println("Edit start URL");
+                }
+            }
+        });
+
         db = new Database();
         if (!db.isReady()) {
             System.out.println("Datenbankzugriff nicht möglich");
@@ -89,6 +109,7 @@ public class Main extends JFrame {
     void initExtractors() {
         Extractors.getInstance().registerExtractor(new BasePageExtractor());
         Extractors.getInstance().registerExtractor(new RegexNameExtractor());
+        Extractors.getInstance().registerExtractor(new MunichNameExtractor());
     }
 
     public void startPageCollector() {

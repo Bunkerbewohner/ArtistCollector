@@ -6,6 +6,8 @@ public class CollectionAndArtist implements Comparable {
     public String crawler;
     public String url;
     public Page page;
+    public String fname;
+    public String lname;
 
     public CollectionAndArtist(String collection, String artist) {
         this.collection = collection;
@@ -13,6 +15,7 @@ public class CollectionAndArtist implements Comparable {
     }
 
     public String getFirstName() {
+        if (fname != null) return fname;
         if (artist.contains(" ")) {
             return artist.split(" ")[0].trim();
         } else {
@@ -21,6 +24,7 @@ public class CollectionAndArtist implements Comparable {
     }
 
     public String getLastName() {
+        if (lname != null) return lname;
         if (artist.contains(" ")) {
             return artist.split(" ")[1].trim();
         } else {

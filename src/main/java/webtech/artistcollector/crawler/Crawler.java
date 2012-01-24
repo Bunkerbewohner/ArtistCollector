@@ -47,6 +47,26 @@ public class Crawler implements RunnableFuture<List<CollectionAndArtist>>{
         rootPage = new Page(startURL, null, false, true);
     }
 
+    public void editStartURL() {
+        JFileChooser fc = new JFileChooser();
+        fc.setMultiSelectionEnabled(false);
+
+        int result = fc.showOpenDialog(null);
+        if (result != JFileChooser.APPROVE_OPTION) return;
+
+        URL url = null;
+        try {
+            url = fc.getSelectedFile().toURI().toURL();
+        } catch (MalformedURLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            return;
+        }
+
+        rootPage.setURL(url);
+        rootPage.setContainsNames(true);
+        rootPage.setContainsPages(false);
+    }
+
     public void run() {
         started = true;
 
