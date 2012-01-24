@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39bf81e9-95df-4373-b481-1fe623b91ea2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/CrawlerEventListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CollectionAndArtist.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CollectionAndArtist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java" />
+    <list default="true" id="39bf81e9-95df-4373-b481-1fe623b91ea2" name="Default" comment="Programm grundlegend funktional. Aber es müssen noch bessere Extraktoren für Seiten und Namen entwickelt werden...">
+      <change type="DELETED" beforePath="C:\Users\Mathias\IdeaProjects\ArtistCollector\.idea\workspace.xml" afterPath="" />
     </list>
     <ignored path="ArtistCollector.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -143,7 +133,7 @@
       <file leaf-file-name="MainWindow.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="50" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.34136546">
+            <state line="79" column="76" selection-start="2452" selection-end="2452" vertical-scroll-proportion="0.5803213">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -729,7 +719,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crawling kann abgebrochen werden und Ergebnisse werden in Datenbank geschrieben. Ist noch SEHR viel Müll dabei. AUßerdem ist die Baumansicht gerade noch futsch. Wird bald behoben." />
+    <option name="LAST_COMMIT_MESSAGE" value="Programm grundlegend funktional. Aber es müssen noch bessere Extraktoren für Seiten und Namen entwickelt werden..." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -748,6 +738,7 @@
     <MESSAGE value="SEHR naive Namensextraktion, Anzeige noch nicht optimale" />
     <MESSAGE value="Auflistung der Namen in Baumansicht. Trefferquote schlecht" />
     <MESSAGE value="Crawling kann abgebrochen werden und Ergebnisse werden in Datenbank geschrieben. Ist noch SEHR viel Müll dabei. AUßerdem ist die Baumansicht gerade noch futsch. Wird bald behoben." />
+    <MESSAGE value="Programm grundlegend funktional. Aber es müssen noch bessere Extraktoren für Seiten und Namen entwickelt werden..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -864,7 +855,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="50" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.34136546">
+        <state line="79" column="76" selection-start="2452" selection-end="2452" vertical-scroll-proportion="0.5803213">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
