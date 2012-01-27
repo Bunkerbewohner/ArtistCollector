@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39bf81e9-95df-4373-b481-1fe623b91ea2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/ArtistCollector_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/MunichNameExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/MunichNameExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CollectionAndArtist.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/CollectionAndArtist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Database.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/data/Page.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/Extractor.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/Extractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java" afterPath="$PROJECT_DIR$/src/main/java/webtech/artistcollector/interfaces/PageInfo.java" />
     </list>
     <ignored path="ArtistCollector.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainWindow.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="28" selection-start="7227" selection-end="7227" vertical-scroll-proportion="0.0">
+            <state line="115" column="47" selection-start="3600" selection-end="3600" vertical-scroll-proportion="0.45833334">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,7 +107,7 @@
       <file leaf-file-name="Crawler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="32" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.0">
+            <state line="89" column="38" selection-start="2927" selection-end="2927" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -133,10 +122,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MunichNameExtractor.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MunichNameExtractor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/MunichNameExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="37" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.4178082">
+            <state line="43" column="37" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -197,8 +186,8 @@
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/MunichNameExtractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/RegexNameExtractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/BasePageExtractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java" />
         <option value="$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java" />
       </list>
     </option>
@@ -701,12 +690,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32516128" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29535866" sideWeight="0.33806452" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29535866" sideWeight="0.2283871" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29535866" sideWeight="0.6516129" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32258064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29535866" sideWeight="0.43870968" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32258064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21212122" sideWeight="0.67741936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="742" y="164" width="1048" height="728" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -745,7 +734,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extraktor für die HTML-Version der PDF der Münchner Graphischen Sammlung hinzugefügt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interfaces erweitert, ein paar Kommentare hinzugefügt" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -767,6 +756,7 @@
     <MESSAGE value="Programm grundlegend funktional. Aber es müssen noch bessere Extraktoren für Seiten und Namen entwickelt werden..." />
     <MESSAGE value="Workspace.xml aus Versionsverwaltung entfernt" />
     <MESSAGE value="Extraktor für die HTML-Version der PDF der Münchner Graphischen Sammlung hinzugefügt" />
+    <MESSAGE value="Interfaces erweitert, ein paar Kommentare hinzugefügt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -847,20 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Extractors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="56" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="32" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/misc/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="13" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
@@ -882,19 +858,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/MunichNameExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="28" selection-start="7227" selection-end="7227" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="43" column="37" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/extractors/MunichNameExtractor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Extractors.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="37" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.4178082">
+        <state line="21" column="56" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/crawler/Crawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="38" selection-start="2927" selection-end="2927" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/webtech/artistcollector/gui/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="47" selection-start="3600" selection-end="3600" vertical-scroll-proportion="0.45833334">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

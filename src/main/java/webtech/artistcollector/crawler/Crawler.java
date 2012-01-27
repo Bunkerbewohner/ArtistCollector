@@ -103,6 +103,8 @@ public class Crawler implements RunnableFuture<List<CollectionAndArtist>>{
             page.addNames(extractNames(page));
         }
 
+        page.releaseContent();
+
         // Rekursiv alle Unterseiten bearbeiten
         for (PageInfo p : page.getSubPages()) {
             extractPages((Page)p);

@@ -12,10 +12,12 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
+import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.net.URISyntaxException;
 import java.security.Key;
 import java.util.Arrays;
 import java.util.Collections;
@@ -106,24 +108,13 @@ public class MainWindow {
     }
 
     void showPageContent(PageInfo page) {
-        JFrame frame = new JFrame("Inhalt von " + page.getURL().toString());
-        frame.setSize(800, 600);
-
-        JEditorPane editorPane = null;
         try {
-            editorPane = new JEditorPane(page.getURL());
+            Desktop.getDesktop().browse(page.getURL().toURI());
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Fehler: " + e.getMessage());
-            return;
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
-
-        JScrollPane scrollPane = new JScrollPane(editorPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-
-        frame.setContentPane(scrollPane);
-
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
     }
 
     private void updateTextPane(final String text) {
