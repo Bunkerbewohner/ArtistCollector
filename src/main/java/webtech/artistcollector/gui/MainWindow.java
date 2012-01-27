@@ -118,6 +118,7 @@ public class MainWindow {
     }
 
     private void updateTextPane(final String text) {
+        /* TODO: Deadlock workaroundk
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 Document doc = getLogPane().getDocument();
@@ -129,6 +130,7 @@ public class MainWindow {
                 getLogPane().setCaretPosition(doc.getLength() - 1);
             }
         });
+        */
     }
 
     public void redirectSystemStreams() {
