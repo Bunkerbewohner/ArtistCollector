@@ -93,7 +93,7 @@ public class Crawler implements RunnableFuture<List<CollectionAndArtist>>{
         // Unterseiten hinzufügen (sofern welche vorhanden sein könnten)
         if (page.containsPages()) {
             for (PageExtractor pe : Extractors.getInstance().getPageExtractors()) {
-                if (!pe.isSelected()) continue;
+                if (!pe.isSelected() || !pe.isApplicable(page)) continue;
                 page.addSubPages(pe.extractPages(page));
             }
         }
@@ -119,15 +119,19 @@ public class Crawler implements RunnableFuture<List<CollectionAndArtist>>{
         Set<CollectionAndArtist> names = new TreeSet<CollectionAndArtist>();
 
         // Vereinigung aller gefundenen Namen bilden
-        // NOTE: Vielleicht wäre die Schnittmenge besser?
         for (NameExtractor ne : Extractors.getInstance().getNameExtractors()) {
-            if (!ne.isSelected()) continue;
+            if (!ne.isSelected() || !ne.isApplicable(page)) continue;
             names.addAll(ne.extractNames(page));
         }
 
         return names;
     }
 
+    /**
+     * Unterbricht die Ausführung des Crawlers bei nächster Gelegenheit.
+     * @param mayInterruptIfRunning
+     * @return
+     */
     public boolean cancel(boolean mayInterruptIfRunning) {
         if (!started || done || cancelled) return false;
 

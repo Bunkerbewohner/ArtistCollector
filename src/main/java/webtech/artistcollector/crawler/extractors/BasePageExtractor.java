@@ -35,6 +35,10 @@ public class BasePageExtractor implements PageExtractor {
         }
     }
 
+    public boolean isApplicable(PageInfo page) {
+        return page.getURL().equals(url);
+    }
+
     /**
      * Liefert den Namen des Extraktors für die GUI
      *
@@ -58,7 +62,7 @@ public class BasePageExtractor implements PageExtractor {
         }
 
         // HTML runterladen und analysieren
-        String html = Util.downloadURL(info.getURL());
+        String html = info.getContent();
         List<PageInfo> pages = new ArrayList<PageInfo>();
 
         // Seitenlinks per Regex rausholen

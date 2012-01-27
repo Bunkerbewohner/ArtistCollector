@@ -8,6 +8,7 @@ public class CollectionAndArtist implements Comparable {
     public Page page;
     public String fname;
     public String lname;
+    public int verified = -1;
 
     public CollectionAndArtist(String collection, String artist) {
         this.collection = collection;

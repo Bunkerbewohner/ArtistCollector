@@ -63,7 +63,7 @@ public class Database {
                 stmt.setString(2, item.getLastName());
                 stmt.setString(3, item.getCollection());
                 stmt.setString(4, item.getCrawler());
-                stmt.setInt(5, -1);
+                stmt.setInt(5, item.verified);
                 stmt.setString(6, item.getURL());
 
                 int rows = stmt.executeUpdate();

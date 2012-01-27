@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 /**
  * Extraktor, der versucht durch einfache Anwendung von regulären Ausdrücken alle (relevanten)
- * Namen auf einer Seite zu extrahieren.
+ * Namen auf einer Seite zu extrahieren. Erzeugt noch jede Menge Müll, d.h. false positives.
  */
 public class RegexNameExtractor implements NameExtractor {
 
@@ -32,6 +32,10 @@ public class RegexNameExtractor implements NameExtractor {
         return "RegexNameExtractor";
     }
 
+    public boolean isApplicable(PageInfo page) {
+        return true;
+    }
+
     /**
      * Gegeben eine bestimmte Seite mit einer Zuordnung zu einer Kunstsammlung, liefert diese Funktion
      * eine Menge von Künstlernamen und den zugehörigen Sammlungen.
@@ -41,7 +45,7 @@ public class RegexNameExtractor implements NameExtractor {
      */
     public Collection<CollectionAndArtist> extractNames(PageInfo info) {
         // HTML herunterladen zur Regex-Untersuchung
-        String pageHTML = Util.downloadURL(info.getURL());
+        String pageHTML = info.getContent();
         if (pageHTML == null) {
             System.out.println("## ERROR could not download '" + info.getURL() + "'");
             return new LinkedList<CollectionAndArtist>();

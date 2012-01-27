@@ -3,6 +3,7 @@ package webtech.artistcollector.data;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import webtech.artistcollector.interfaces.PageInfo;
+import webtech.artistcollector.misc.Util;
 
 import javax.naming.ldap.PagedResultsControl;
 import javax.swing.event.TreeModelEvent;
@@ -29,7 +30,7 @@ public class Page implements PageInfo, TreeModel {
     protected List<CollectionAndArtist> names;
     protected List<PageInfo> subPages;
     protected List<TreeModelListener> modelListeners;
-    protected int verified = -1;
+    protected String content = null;
 
     public Page(URL url, String collection, boolean gotNames, boolean gotPages) {
         modelListeners = new ArrayList<TreeModelListener>();
@@ -39,6 +40,18 @@ public class Page implements PageInfo, TreeModel {
         this.gotPages = gotPages;
         names = new ArrayList<CollectionAndArtist>();
         subPages = new ArrayList<PageInfo>();
+    }
+
+    public String getContent() {
+        if (content == null) {
+            content = Util.downloadURL(getURL());
+        }
+
+        return content;
+    }
+
+    public void releaseContent() {
+        content = null;
     }
 
     public void setParent(Page parent) {

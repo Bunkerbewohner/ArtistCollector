@@ -30,16 +30,24 @@ public class MunichNameExtractor implements NameExtractor {
         return "RegexNameExtractor";
     }
 
+    public boolean isApplicable(PageInfo page) {
+        // True heißt, dass der Extraktor für alle Seiten aufgerufen wird,
+        // jedoch wird später beim Extrahieren nochmal geprüft, ob es sich
+        // wirklich um die Müncher-Sammlung handelt. Dies kann nicht anhand
+        // des URLs geprüft werden, sondern nur anhand des Inhalts.
+        return true;
+    }
+
     /**
      * Gegeben eine bestimmte Seite mit einer Zuordnung zu einer Kunstsammlung, liefert diese Funktion
-     * eine Menge von Künstlernamen und den zugehörigen Sammlungen.
+     * eine Menge von Künstlernamen und den zugehörigen Sammlungen. Wenn aus jeglichem Grund keine
+     * Künstername gefunden werden, muss eine leere Liste zurückgeliefert werden.
      *
      * @param info Seite
      * @return Liste von Namen mit Sammlungszuordnung
      */
     public Collection<CollectionAndArtist> extractNames(PageInfo info) {
-        // HTML herunterladen zur Regex-Untersuchung
-        String pageHTML = Util.downloadURL(info.getURL());
+        String pageHTML = info.getContent();
         if (pageHTML == null) {
             System.out.println("## ERROR could not download '" + info.getURL() + "'");
             return new LinkedList<CollectionAndArtist>();

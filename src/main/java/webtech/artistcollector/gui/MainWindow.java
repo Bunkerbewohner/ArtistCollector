@@ -1,5 +1,6 @@
 package webtech.artistcollector.gui;
 
+import webtech.artistcollector.data.Page;
 import webtech.artistcollector.data.PageModel;
 import webtech.artistcollector.interfaces.PageInfo;
 
@@ -11,10 +12,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -107,6 +105,27 @@ public class MainWindow {
         });
     }
 
+    void showPageContent(PageInfo page) {
+        JFrame frame = new JFrame("Inhalt von " + page.getURL().toString());
+        frame.setSize(800, 600);
+
+        JEditorPane editorPane = null;
+        try {
+            editorPane = new JEditorPane(page.getURL());
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Fehler: " + e.getMessage());
+            return;
+        }
+
+        JScrollPane scrollPane = new JScrollPane(editorPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+        frame.setContentPane(scrollPane);
+
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
     private void updateTextPane(final String text) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -191,6 +210,13 @@ public class MainWindow {
                     e.consume();
                 } else if (e.getKeyCode() == KeyEvent.VK_F2) {
                     Main.getInstance().crawler.editStartURL();
+                } else if (e.getKeyCode() == KeyEvent.VK_F5) {
+                    TreePath path = pageHierarchy.getSelectionPath();
+                    if (path != null) {
+                        Page p = Main.getInstance().crawler.getRootPage().getPage(path);
+                        if (p != null)
+                            showPageContent(p);
+                    }
                 }
             }
         });

@@ -7,6 +7,7 @@ import webtech.artistcollector.crawler.extractors.MunichNameExtractor;
 import webtech.artistcollector.crawler.extractors.RegexNameExtractor;
 import webtech.artistcollector.data.Database;
 import webtech.artistcollector.data.PageModel;
+import webtech.artistcollector.interfaces.Extractor;
 import webtech.artistcollector.misc.Util;
 
 import javax.swing.*;
@@ -106,10 +107,16 @@ public class Main extends JFrame {
         db.InsertNames(Util.listNames(crawler.getRootPage()));
     }
 
+    /**
+     * Initialisiert die Extraktoren. Hier einfach für jede Art von Extraktor eine Instanz
+     * hinzufügen per Extractors#getInstance.
+     */
     void initExtractors() {
-        Extractors.getInstance().registerExtractor(new BasePageExtractor());
-        Extractors.getInstance().registerExtractor(new RegexNameExtractor());
-        Extractors.getInstance().registerExtractor(new MunichNameExtractor());
+        Extractors e = Extractors.getInstance();
+
+        e.registerExtractor(new BasePageExtractor());
+        e.registerExtractor(new RegexNameExtractor());
+        e.registerExtractor(new MunichNameExtractor());
     }
 
     public void startPageCollector() {

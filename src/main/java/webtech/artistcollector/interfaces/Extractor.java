@@ -20,4 +20,14 @@ public interface Extractor {
      */
     void setSelected(boolean selected);
 
+    /**
+     * Gibt an, ob der Extraktor für eine bestimmte Seite geeignet ist.
+     * Beispielsweise können Extraktoren so über die URL überprüfen,
+     * ob sie die Seite bearbeiten "wollen". Dies wird für seitenspezifische
+     * Extraktoren benötigt.
+     * @param page Seiteninformationen
+     * @return True, wenn die Seite vom Extraktor bearbeitet werden kann
+     */
+    boolean isApplicable(PageInfo page);
+
 }

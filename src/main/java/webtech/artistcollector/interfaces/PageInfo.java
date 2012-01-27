@@ -70,4 +70,16 @@ public interface PageInfo {
      * @return Anzahl Namen
      */
     int countNames();
+
+    /**
+     * Liefert den Inhalt der Seite als String. Sollte normalerweise HTML sein.
+     * @return Seiteninhalt
+     */
+    String getContent();
+
+    /**
+     * Gibt den Inhalt der Seite frei. Wird vom Crawler aufgerufen, sobald
+     * er nicht mehr benötigt wird, damit der Speicher nicht voll läuft.
+     */
+    void releaseContent();
 }
