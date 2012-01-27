@@ -7,10 +7,8 @@ import webtech.artistcollector.data.CollectionAndArtist;
 import webtech.artistcollector.interfaces.NameExtractor;
 import webtech.artistcollector.interfaces.PageInfo;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,7 +24,7 @@ public class GeneralRegexNameExtractor implements NameExtractor {
     /**
      * Daten zur Beschreibung eines Extraktors
      */
-    public class Params {
+    public static class Params {
         /**
          * Name dieses Extraktors
          */
@@ -42,9 +40,15 @@ public class GeneralRegexNameExtractor implements NameExtractor {
 
         /**
          * Regex, der auf URLs matchen muss, die von diesem Extraktor behandelt
-         * werden.
+         * werden. Wenn der Wert null ist, werden alle URLs akzeptiert.
          */
         public Pattern acceptableURLs;
+
+        /**
+         * Regex, der auf den Inhalt passen muss, der von diesem Extraktor behandelt wird.
+         * Der Wert kann null sein, wenn der Inhalt nicht überprüft werden soll.
+         */
+        public Pattern acceptableContent;
 
         /**
          * Kann gesetzt werden, um den Namen der erkannten Sammmlung explizit zu setzen.
@@ -52,11 +56,31 @@ public class GeneralRegexNameExtractor implements NameExtractor {
          */
         public String collection = null;
 
-        public Params(String name, Pattern acceptableURLs, String collection, Pattern...patterns) {
+        public Params(String name, Pattern acceptableURLs, Pattern acceptableContent,
+                      String collection, Pattern...patterns) {
             this.name = name;
             this.acceptableURLs = acceptableURLs;
+            this.acceptableContent = acceptableContent;
             this.collection = collection;
             this.patterns = patterns;
+        }
+
+        protected void load(PropertiesConfiguration config) throws IOException, ConfigurationException {
+            this.name = config.getString("name");
+            this.collection = config.getString("collection");
+
+            String urlPattern = config.getString("acceptableURLs");
+            if (urlPattern != null) this.acceptableURLs = Pattern.compile(urlPattern);
+
+            String contentPattern = config.getString("acceptableContent");
+            if (contentPattern != null) this.acceptableContent = Pattern.compile(contentPattern);
+
+            List<Pattern> patterns = new ArrayList<Pattern>();
+            for (String p : config.getStringArray("patterns")) {
+                patterns.add(Pattern.compile(p, Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL));
+            }
+
+            this.patterns = patterns.toArray(new Pattern[0]);
         }
 
         public Params(File configFile) throws IOException, ConfigurationException {
@@ -64,16 +88,23 @@ public class GeneralRegexNameExtractor implements NameExtractor {
             config.setDelimiterParsingDisabled(true);
             config.load(configFile);
 
-            this.name = config.getString("name");
-            this.collection = config.getString("collection");
-            this.acceptableURLs = Pattern.compile(config.getString("acceptableURLs"));
+            load(config);
+        }
 
-            List<Pattern> patterns = new ArrayList<Pattern>();
-            for (String p : config.getStringArray("patterns")) {
-                patterns.add(Pattern.compile(p));
-            }
+        public Params(URL configURL) throws IOException, ConfigurationException {
+            PropertiesConfiguration config = new PropertiesConfiguration();
+            config.setDelimiterParsingDisabled(true);
+            config.load(configURL);
 
-            this.patterns = patterns.toArray(new Pattern[0]);
+            load(config);
+        }
+
+        public Params(InputStream configStream) throws IOException, ConfigurationException {
+            PropertiesConfiguration config = new PropertiesConfiguration();
+            config.setDelimiterParsingDisabled(true);
+            config.load(configStream);
+
+            load(config);
         }
     }
 
@@ -85,9 +116,6 @@ public class GeneralRegexNameExtractor implements NameExtractor {
 
         if (params.name == null)
             throw new Exception("Name muss definiert werden");
-
-        if (params.acceptableURLs == null)
-            throw new Exception("Es muss ein Regex für akzeptierte URLs definiert werden");
 
         if (params.patterns == null || params.patterns.length == 0)
             throw new Exception("Es müssen Regex zum Extrahieren von Namen definiert werden");
@@ -174,14 +202,16 @@ public class GeneralRegexNameExtractor implements NameExtractor {
 
     /**
      * Gibt an, ob der Extraktor für eine bestimmte Seite geeignet ist.
-     * Beispielsweise können Extraktoren so über die URL überprüfen,
-     * ob sie die Seite bearbeiten "wollen". Dies wird für seitenspezifische
-     * Extraktoren benötigt.
+     * Es wird der URL und der Inhalt der Seite mit den entsprechenden Regex
+     * abgeglichen (acceptableURLs, acceptableContent).
      *
      * @param page Seiteninformationen
      * @return True, wenn die Seite vom Extraktor bearbeitet werden kann
      */
     public boolean isApplicable(PageInfo page) {
-        return params.acceptableURLs.matcher(page.getURL().toString()).matches();
+        return (params.acceptableURLs == null ||
+                params.acceptableURLs.matcher(page.getURL().toString()).matches()) &&
+               (params.acceptableContent == null ||
+                params.acceptableContent.matcher(page.getContent()).matches());
     }
 }

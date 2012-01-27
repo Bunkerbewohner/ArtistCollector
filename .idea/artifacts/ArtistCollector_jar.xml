@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="ArtistCollector:jar">
+  <artifact type="jar" build-on-make="true" name="ArtistCollector:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/ArtistCollector_jar</output-path>
     <root id="archive" name="ArtistCollector.jar">
       <element id="directory" name="META-INF">
@@ -10,6 +10,12 @@
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-maxent/3.0.2-incubating/opennlp-maxent-3.0.2-incubating.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/sqljdbc4.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-tools/1.5.2-incubating/opennlp-tools-1.5.2-incubating.jar" path-in-jar="/" />
+      <element id="directory" name="extractors">
+        <element id="dir-copy" path="$PROJECT_DIR$/extractors" />
+      </element>
+      <element id="directory" name="src">
+        <element id="dir-copy" path="$PROJECT_DIR$/src" />
+      </element>
     </root>
   </artifact>
 </component>
