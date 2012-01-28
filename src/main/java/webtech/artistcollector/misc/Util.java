@@ -48,7 +48,6 @@ public class Util {
             int bytesRead = 1;
 
             while ((bytesRead = reader.read(buffer)) > 0) {
-                reader.read(buffer);
                 sb.append(buffer);
             }
 

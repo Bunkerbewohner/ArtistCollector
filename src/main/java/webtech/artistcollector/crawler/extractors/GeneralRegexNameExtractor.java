@@ -68,16 +68,18 @@ public class GeneralRegexNameExtractor implements NameExtractor {
         protected void load(PropertiesConfiguration config) throws IOException, ConfigurationException {
             this.name = config.getString("name");
             this.collection = config.getString("collection");
+            if (collection != null) collection = collection.trim();
 
             String urlPattern = config.getString("acceptableURLs");
-            if (urlPattern != null) this.acceptableURLs = Pattern.compile(urlPattern);
+            if (urlPattern != null) this.acceptableURLs = Pattern.compile(urlPattern.trim());
 
             String contentPattern = config.getString("acceptableContent");
-            if (contentPattern != null) this.acceptableContent = Pattern.compile(contentPattern);
+            if (contentPattern != null) this.acceptableContent = Pattern.compile(contentPattern.trim());
 
             List<Pattern> patterns = new ArrayList<Pattern>();
             for (String p : config.getStringArray("patterns")) {
-                patterns.add(Pattern.compile(p, Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL));
+                patterns.add(Pattern.compile(p.trim(),
+                        Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL));
             }
 
             this.patterns = patterns.toArray(new Pattern[0]);
@@ -163,14 +165,23 @@ public class GeneralRegexNameExtractor implements NameExtractor {
                         m.pattern().pattern());
                 }
 
-                String url = m.group(1);
-                String name = m.group(2);
+                String name = null;
 
-                String collection = params.collection != null ? params.collection : info.getCollection();
+                if (m.groupCount() == 1) {
+                    name = m.group(1).trim();
+                } else if (m.groupCount() == 2) {
+                    name = m.group(2).trim() + " " + m.group(1).trim();
+                }
 
-                CollectionAndArtist item = new CollectionAndArtist(collection, name);
+                CollectionAndArtist item = new CollectionAndArtist(info.getCollection(), name);
                 item.crawler = getCrawlerTag();
                 item.url = info.getURL().toString();
+                item.collection = params.collection != null ? params.collection : info.getCollection();
+
+                if (m.groupCount() == 2) {
+                    item.fname = m.group(2);
+                    item.lname = m.group(1);
+                }
 
                 names.add(item);
             }
@@ -209,9 +220,16 @@ public class GeneralRegexNameExtractor implements NameExtractor {
      * @return True, wenn die Seite vom Extraktor bearbeitet werden kann
      */
     public boolean isApplicable(PageInfo page) {
-        return (params.acceptableURLs == null ||
-                params.acceptableURLs.matcher(page.getURL().toString()).matches()) &&
-               (params.acceptableContent == null ||
-                params.acceptableContent.matcher(page.getContent()).matches());
+        boolean acceptable = true;
+
+        acceptable &= params.acceptableURLs == null ||
+                      params.acceptableURLs.matcher(page.getURL().toString()).find();
+
+        if (page.getContent() != null) {
+            acceptable &= params.acceptableContent == null ||
+                          params.acceptableContent.matcher(page.getContent()).find();
+        }
+
+        return acceptable;
     }
 }

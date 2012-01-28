@@ -210,6 +210,13 @@ public class MainWindow {
                         if (p != null)
                             showPageContent(p);
                     }
+                } else if (e.getKeyCode() == KeyEvent.VK_F10) {
+                    TreePath path = pageHierarchy.getSelectionPath();
+                    if (path != null) {
+                        Page p = Main.getInstance().crawler.getRootPage().getPage(path);
+                        if (p != null)
+                            new RegexLab(p).setVisible(true);
+                    }
                 }
             }
         });

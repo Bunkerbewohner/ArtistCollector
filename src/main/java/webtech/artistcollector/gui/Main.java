@@ -116,7 +116,7 @@ public class Main extends JFrame {
 
         e.registerExtractor(new BasePageExtractor());
         e.registerExtractor(new RegexNameExtractor());
-        e.registerExtractor(new MunichNameExtractor());
+        //e.registerExtractor(new MunichNameExtractor());
     }
 
     public void startPageCollector() {
