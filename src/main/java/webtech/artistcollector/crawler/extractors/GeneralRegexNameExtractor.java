@@ -25,6 +25,12 @@ public class GeneralRegexNameExtractor implements NameExtractor {
      * Daten zur Beschreibung eines Extraktors
      */
     public static class Params {
+
+        /**
+         * Herkunft der Parameter (z.B. Dateiname)
+         */
+        public String origin;
+
         /**
          * Name dieses Extraktors
          */
@@ -35,6 +41,9 @@ public class GeneralRegexNameExtractor implements NameExtractor {
          * Alle Pattern werden auf eine Seite angewendet und die Treffer zur
          * Ergebnismenge hinzugefügt. Eine match-Gruppe wird als Monogramm
          * interpretiert, zwei Gruppen als Vor- bzw. Nachname.
+         *
+         * Die Gruppen müssen benannt sein als "fname" und "lname" für Vor-
+         * und Nachnamen, bzw. nur als "lname" bei Monogrammen.
          */
         public Pattern[] patterns;
 
@@ -91,6 +100,7 @@ public class GeneralRegexNameExtractor implements NameExtractor {
             config.load(configFile);
 
             load(config);
+            origin = configFile.getName();
         }
 
         public Params(URL configURL) throws IOException, ConfigurationException {
@@ -99,6 +109,7 @@ public class GeneralRegexNameExtractor implements NameExtractor {
             config.load(configURL);
 
             load(config);
+            origin = configURL.getFile();
         }
 
         public Params(InputStream configStream) throws IOException, ConfigurationException {
@@ -133,7 +144,7 @@ public class GeneralRegexNameExtractor implements NameExtractor {
     }
 
     String getCrawlerTag() {
-        return "MC3K: " + params.name;
+        return "MC3K";
     }
 
     /**
@@ -168,19 +179,22 @@ public class GeneralRegexNameExtractor implements NameExtractor {
                 String name = null;
 
                 if (m.groupCount() == 1) {
-                    name = m.group(1).trim();
+                    name = m.group("lname").trim();
                 } else if (m.groupCount() == 2) {
-                    name = m.group(2).trim() + " " + m.group(1).trim();
+                    name = m.group("fname").trim() + " " + m.group("lname").trim();
                 }
 
                 CollectionAndArtist item = new CollectionAndArtist(info.getCollection(), name);
                 item.crawler = getCrawlerTag();
                 item.url = info.getURL().toString();
                 item.collection = params.collection != null ? params.collection : info.getCollection();
+                item.comment = "gefunden von " + params.origin;
 
                 if (m.groupCount() == 2) {
-                    item.fname = m.group(2);
-                    item.lname = m.group(1);
+                    item.fname = m.group("fname").trim();
+                    item.lname = m.group("lname").trim();
+                } else if (m.groupCount() == 1) {
+                    item.lname = m.group("lname").trim();
                 }
 
                 names.add(item);

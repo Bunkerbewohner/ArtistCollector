@@ -1,14 +1,58 @@
 package webtech.artistcollector.data;
 
+/**
+ * Informationen über einen in einer Sammlung gefundenen Künstler
+ */
 public class CollectionAndArtist implements Comparable {
+
+    /**
+     * Name der Sammlung, in der der Künstler gefunden wurde
+     */
     public String collection;
+
+    /**
+     * Gesamter Name des Künstlers bestehend aus Vor- und Nachname,
+     * bzw. einem Monogramm.
+     */
     public String artist;
+
+    /**
+     * Crawler, der den Eintrag gefunden hat
+     */
     public String crawler;
+
+    /**
+     * URL der Seite, auf der der Eintrag gefunden wurde
+     */
     public String url;
+
+    /**
+     * Seite auf der der Eintrag gefunden wurde
+     */
     public Page page;
+
+    /**
+     * Vorname
+     */
     public String fname;
+
+    /**
+     * Nachname bzw. Monogramm, wenn es keinen Vornamen gibt
+     */
     public String lname;
+
+    /**
+     * Zahl, die angibt, ob der Eintrag verifiziert wurde.
+     * -1 = nicht verifiziert
+     * 0 = negativ verifiziert
+     * 1+ = positiv verifiziert
+     */
     public int verified = -1;
+
+    /**
+     * Jegliche Kommentare zum Eintrag (max. 255 Zeichen)
+     */
+    public String comment = null;
 
     public CollectionAndArtist(String collection, String artist) {
         this.collection = collection;
@@ -16,21 +60,11 @@ public class CollectionAndArtist implements Comparable {
     }
 
     public String getFirstName() {
-        if (fname != null) return fname;
-        if (artist.contains(" ")) {
-            return artist.split(" ")[0].trim();
-        } else {
-            return artist;
-        }
+        return fname;
     }
 
     public String getLastName() {
-        if (lname != null) return lname;
-        if (artist.contains(" ")) {
-            return artist.split(" ")[1].trim();
-        } else {
-            return artist;
-        }
+        return lname;
     }
 
     public String getCollection() {
@@ -47,7 +81,7 @@ public class CollectionAndArtist implements Comparable {
 
     @Override
     public String toString() {
-        return collection + " -> " + artist;
+        return collection + " -> " + getLastName() + ", " + getFirstName() + " (" + artist + ")";
     }
 
     /**

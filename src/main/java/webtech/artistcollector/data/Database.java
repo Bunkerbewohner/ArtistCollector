@@ -56,15 +56,16 @@ public class Database {
             try {
                 i++;
                 PreparedStatement stmt = connection.prepareStatement(
-                        "INSERT INTO dbo.Artists (lname,fname,[collection],crawler,verified,url) " +
-                        "VALUES (?,?,?,?,?,?)");
+                        "INSERT INTO dbo.Artists (lname,fname,[collection],crawler,verified,url,comment) " +
+                        "VALUES (?,?,?,?,?,?,?)");
 
-                stmt.setString(1, item.getFirstName());
-                stmt.setString(2, item.getLastName());
+                stmt.setString(1, item.getLastName());
+                stmt.setString(2, item.getFirstName() != null ? item.getFirstName() : "");
                 stmt.setString(3, item.getCollection());
                 stmt.setString(4, item.getCrawler());
                 stmt.setInt(5, item.verified);
                 stmt.setString(6, item.getURL());
+                stmt.setString(7, item.comment);
 
                 int rows = stmt.executeUpdate();
                 inserted += rows;
