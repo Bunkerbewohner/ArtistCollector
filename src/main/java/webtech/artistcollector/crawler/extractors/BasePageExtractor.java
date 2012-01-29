@@ -35,6 +35,8 @@ public class BasePageExtractor implements PageExtractor {
     }
 
     public boolean isApplicable(PageInfo page) {
+        // Dieser Extraktor bearbeitet nur die Liste der Sammlungen,
+        // auch keine Unterseiten davon!
         return page.getURL().equals(url);
     }
 

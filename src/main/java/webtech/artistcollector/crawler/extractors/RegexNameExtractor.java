@@ -33,7 +33,8 @@ public class RegexNameExtractor implements NameExtractor {
     }
 
     public boolean isApplicable(PageInfo page) {
-        return true;
+        // Ist nur für die Wikipedia-Seiten gedacht
+        return page.getURL().toString().matches("wikipedia");
     }
 
     /**
@@ -77,6 +78,7 @@ public class RegexNameExtractor implements NameExtractor {
                 CollectionAndArtist item = new CollectionAndArtist(info.getCollection(), name);
                 item.crawler = CRAWLER_TAG;
                 item.url = info.getURL().toString();
+                item.comment = this.getClass().getName();
 
                 names.add(item);
             }
