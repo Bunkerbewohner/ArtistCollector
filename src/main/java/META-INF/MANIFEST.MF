@@ -1,3 +1,6 @@
 Manifest-Version: 1.0
-Main-Class: webtech.artistcollector.gui.Main
+Class-Path: commons-logging-1.1.1.jar commons-configuration-1.7.jar co
+ mmons-beanutils-1.8.3.jar commons-collections-3.2.1.jar commons-lang-
+ 2.6.jar sqljdbc4.jar commons-digester-1.8.1.jar
+Main-Class: StartApp
 

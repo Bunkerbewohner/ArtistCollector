@@ -6,14 +6,16 @@
 
     <groupId>ArtistCollector</groupId>
     <artifactId>ArtistCollector</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <dependencies>
+        <!--
         <dependency>
           <groupId>org.apache.opennlp</groupId>
           <artifactId>opennlp-tools</artifactId>
           <version>1.5.2-incubating</version>
         </dependency>
+        -->
         <dependency>
             <groupId>commons-configuration</groupId>
             <artifactId>commons-configuration</artifactId>

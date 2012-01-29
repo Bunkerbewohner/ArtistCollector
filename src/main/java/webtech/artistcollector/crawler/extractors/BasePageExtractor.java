@@ -1,6 +1,5 @@
 package webtech.artistcollector.crawler.extractors;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import webtech.artistcollector.data.Page;
 import webtech.artistcollector.data.PageModel;
 import webtech.artistcollector.gui.Main;

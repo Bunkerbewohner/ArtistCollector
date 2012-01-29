@@ -77,6 +77,9 @@ public class MainWindow {
 
     public MainWindow() {
 
+    }
+
+    public void init() {
         startPageCollectorButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 eventCollectorStarted();

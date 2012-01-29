@@ -75,6 +75,7 @@ public class Main extends JFrame {
 
         // Create Form
         mainForm = new MainWindow();
+        mainForm.init();
         this.setContentPane(mainForm.getRootPanel());
         //mainForm.redirectSystemStreams();
         mainForm.setTreeModel(crawler.getRootPage());
