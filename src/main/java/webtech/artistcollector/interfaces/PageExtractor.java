@@ -20,5 +20,4 @@ public interface PageExtractor extends Extractor {
      * @return Liste von Seiten
      */
     Collection<PageInfo> extractPages(PageInfo info);
-
 }

@@ -37,7 +37,7 @@ public class BasePageExtractor implements PageExtractor {
     public boolean isApplicable(PageInfo page) {
         // Dieser Extraktor bearbeitet nur die Liste der Sammlungen,
         // auch keine Unterseiten davon!
-        return page.getURL().equals(url);
+        return page.getURL().toString().contains("wikipedia");
     }
 
     /**
@@ -68,9 +68,9 @@ public class BasePageExtractor implements PageExtractor {
 
         // Seitenlinks per Regex rausholen
         Pattern[] patterns = new Pattern[]{
-                Pattern.compile("<a href=\"([^\"]+?)\"[^>]+>([^<]+?)</a>")
-                //Pattern.compile("<li>[^<]*?<a href=\"([^\"]*?)\"[^>]+>([^<]*?)</a>", Pattern.DOTALL),
-                //Pattern.compile("<tr>\\s+<td>.*?<a href=\"([^\"]*?)\"[^>]+>([^<]*?)</a>", Pattern.DOTALL)
+                //Pattern.compile("<a href=\"([^\"]+?)\"[^>]+>([^<]+?)</a>")
+                Pattern.compile("<li>[^<]*?<a href=\"([^\"]*?)\"[^>]+>([^<]*?)</a>", Pattern.DOTALL),
+                Pattern.compile("<tr>\\s+<td>.*?<a href=\"([^\"]*?)\"[^>]+>([^<]*?)</a>", Pattern.DOTALL)
         };
 
         // Aus jedem Treffer eine Seite erzeugen
